@@ -3,14 +3,12 @@ package com.email.writer;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @AllArgsConstructor
 @RestController
 @RequestMapping("/email")
+@CrossOrigin(origins = "https://ai-email-writer-4rk4.onrender.com")
 public class EmailGeneratorController {
 
     private final EmailGeneratorService emailGeneratorService;
