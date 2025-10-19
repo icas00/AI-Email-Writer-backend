@@ -93,11 +93,30 @@ public class EmailGeneratorService {
 
     private String buildPrompt(EmailRequest emailRequest) {
         StringBuilder prompt = new StringBuilder();
-        prompt.append("Generate a professional email reply for the following email content. ");
-        if(emailRequest.getTone() != null && !emailRequest.getTone().isEmpty()){
-            prompt.append("Use ").append(emailRequest.getTone()).append(" tone. ");
-        }
-        prompt.append("\nOriginal Email:\n").append(emailRequest.getEmailContent());
+
+        prompt.append("""
+        You are an AI assistant that writes professional, human-like email replies.
+
+        Task:
+        Generate a complete, well-structured email reply to the following email content.
+
+        Guidelines:
+        - Maintain the context of the original email.
+        - Use the specified tone (if provided) for consistency.
+        - Be concise, polite, and natural.
+        - Include appropriate greetings, acknowledgements, and closings.
+        - If the sender asked a question or made a request, address it directly.
+        - If the tone is 'formal', use professional phrasing.
+        - If the tone is 'friendly', use approachable and conversational phrasing.
+        - Do not repeat the original email content.
+        """);
+
+        // Add the original email content
+        prompt.append("Original Email:\n")
+                .append(emailRequest.getEmailContent())
+                .append("\n\nNow write the best possible email reply in the given tone.");
+
         return prompt.toString();
     }
+
 }

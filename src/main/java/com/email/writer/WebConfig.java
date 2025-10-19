@@ -17,9 +17,10 @@ public class WebConfig {
                         .allowedOrigins(
                                 "http://localhost:5173",  // local Vite dev server
                                 "https://ai-email-writer-4rk4.onrender.com", // deployed frontend
-                                "chrome-extension://hhpgolmapneehaennhmcpnljkbffamkp"
+                                "chrome-extension://hhpgolmapneehaennhmcpnljkbffamkp",// extension
+                                "https://mail.google.com"
                         )
-                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                        .allowedMethods("GET", "POST")
                         .allowedHeaders("*")
                         .allowCredentials(true);
             }
