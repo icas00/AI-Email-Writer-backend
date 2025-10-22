@@ -45,8 +45,6 @@ public class EmailGeneratorService {
                     )
             );
 
-            System.out.println("Request JSON: " + new ObjectMapper().writeValueAsString(requestBody));
-
             String targetUrl = geminiApiUrl + "?key=" + geminiApiKey;
 
             String response = webClient.post()

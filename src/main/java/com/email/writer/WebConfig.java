@@ -15,7 +15,6 @@ public class WebConfig {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
                         .allowedOrigins(
-                                "http://localhost:5173",  // local Vite dev server
                                 "https://ai-email-writer-4rk4.onrender.com", // deployed frontend
                                 "chrome-extension://hhpgolmapneehaennhmcpnljkbffamkp",// extension
                                 "https://mail.google.com"
