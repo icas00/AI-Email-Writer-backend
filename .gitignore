@@ -4,3 +4,4 @@ target/
 *.log
 .env
 *.key
+.mvn
