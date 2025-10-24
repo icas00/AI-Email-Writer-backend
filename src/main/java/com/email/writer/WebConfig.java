@@ -17,8 +17,7 @@ public class WebConfig {
                         .allowedOrigins(
                                 "https://ai-email-writer-4rk4.onrender.com", // deployed frontend
                                 "chrome-extension://hhpgolmapneehaennhmcpnljkbffamkp",// extension
-                                "https://mail.google.com",
-                                "https://emailwriter.saadmirza7862004.workers.dev"
+                                "https://mail.google.com"
                         )
                         .allowedMethods("GET", "POST")
                         .allowedHeaders("*")
