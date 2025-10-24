@@ -16,7 +16,7 @@ public class WebConfig {
                 registry.addMapping("/**")
                         .allowedOrigins(
                                 "https://ai-email-writer-4rk4.onrender.com", // deployed frontend
-                                "chrome-extension://hhpgolmapneehaennhmcpnljkbffamkp",// extension
+                                "chrome-extension://nefgnkboedlacmpgbkgjoknjeigpppln",// extension
                                 "https://mail.google.com"
                         )
                         .allowedMethods("GET", "POST")
