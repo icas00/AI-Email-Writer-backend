@@ -39,3 +39,31 @@ Java · Spring Boot · Gemini API · Render · CORS setup
 { "reply": "Sure! Let me know a time that works better for you 😊" }
 
 
+---
+
+### Overview
+Built with **Spring Boot**, this backend:
+- Exposes `/generate` endpoint for AI replies  
+- Uses **Gemini API** for tone-aware text generation  
+- Configured with **CORS** and environment-based API keys  
+- Deployed on **Render** (via Cloudflare proxy for extension approval)
+
+---
+
+### Stack
+
+Java · Spring Boot · Gemini API · Render · CORS setup
+
+---
+
+### Example
+**POST** `/generate`
+```json
+{
+  "prompt": "Can we reschedule our meeting?",
+  "tone": "Friendly"
+}
+
+{ "reply": "Sure! Let me know a time that works better for you 😊" }
+
+
