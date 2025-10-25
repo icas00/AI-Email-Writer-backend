@@ -8,9 +8,11 @@
 
 Backend API for **Email Writer AI**, the Chrome Extension + web app that generates AI-powered email replies.
 
-🌐 [Frontend Repo](https://github.com/icas00/AI-Email-Writer-frontend) 
-🧩 [Chrome Extension](https://chromewebstore.google.com/detail/email-writer/nefgnkboedlacmpgbkgjoknjeigpppln)
+**Frontend Repo:**  
+[AI-Email-Writer-frontend](https://github.com/icas00/AI-Email-Writer-frontend)
 
+**Chrome Extension:**  
+[Link](https://chromewebstore.google.com/detail/email-writer/nefgnkboedlacmpgbkgjoknjeigpppln)
 ---
 
 ### Overview
