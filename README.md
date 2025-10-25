@@ -1,4 +1,4 @@
-```markdown
+
 # Email Writer AI — Backend (Spring Boot)
 
 Backend API for Email Writer AI, the Chrome Extension + web app that generates AI-powered email replies.
@@ -44,4 +44,4 @@ Add your API key in `.env` → `GEMINI_API_KEY=your_api_key_here`
 Saad Mirza  
 📫 engr.saadmirza@gmail.com  
 LinkedIn: [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin)](https://www.linkedin.com/in/saadmirza1/)
-```
+
