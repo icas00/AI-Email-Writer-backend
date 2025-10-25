@@ -43,5 +43,5 @@ Add your API key in `.env` → `GEMINI_API_KEY=your_api_key_here`
 ### Author
 Saad Mirza  
 📫 engr.saadmirza@gmail.com  
-LinkedIn: [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin)](https://www.linkedin.com/in/saadmirza1/)
+LinkedIn: [Link⭧](https://www.linkedin.com/in/saadmirza1/)
 
