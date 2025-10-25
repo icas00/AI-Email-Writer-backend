@@ -3,8 +3,8 @@
 
 Backend API for Email Writer AI, the Chrome Extension + web app that generates AI-powered email replies.
 
-**Frontend Repo:** [AI-Email-Writer-frontend](https://github.com/icas00/AI-Email-Writer-frontend)  
-**Chrome Extension:** [Link](https://chromewebstore.google.com/detail/email-writer/nefgnkboedlacmpgbkgjoknjeigpppln)
+**Frontend Repo:** [![Frontend Repo](https://img.shields.io/badge/Frontend_Code-gray?logo=github)](https://github.com/icas00/AI-Email-Writer-frontend)  
+**Chrome Extension:** [![Chrome Extension](https://img.shields.io/badge/Chrome_Extension-blue?logo=google-chrome)](https://chromewebstore.google.com/detail/email-writer/nefgnkboedlacmpgbkgjoknjeigpppln)
 
 ### Overview
 Built with **Spring Boot**, this backend:
@@ -42,5 +42,5 @@ Add your API key in `.env` → `GEMINI_API_KEY=your_api_key_here`
 ### Author
 Saad Mirza  
 📫 engr.saadmirza@gmail.com  
-LinkedIn: [https://www.linkedin.com/in/saadmirza/](https://www.linkedin.com/in/saad-mirza1/)
+LinkedIn: [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin)](https://www.linkedin.com/in/saadmirza1/)
 ```
