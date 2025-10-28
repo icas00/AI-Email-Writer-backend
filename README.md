@@ -3,8 +3,8 @@
 
 Backend API for Email Writer AI, the Chrome Extension + web app that generates AI-powered email replies.
 
-**Frontend Repo:** [LINK⭧](https://github.com/icas00/AI-Email-Writer-frontend)  
-**Chrome Extension:** [LINK⭧](https://chromewebstore.google.com/detail/email-writer/nefgnkboedlacmpgbkgjoknjeigpppln)
+**Frontend Repo:** [LINK](https://github.com/icas00/AI-Email-Writer-frontend)  
+**Chrome Extension:** [LINK](https://chromewebstore.google.com/detail/email-writer/nefgnkboedlacmpgbkgjoknjeigpppln)
 
 
 ### Overview
@@ -12,8 +12,7 @@ Built with **Spring Boot**, this backend:
 - Exposes `/generate` endpoint for AI replies  
 - Uses **Gemini API** for tone-aware text generation  
 - Configured with **CORS** and environment-based API keys  
-- Deployed on **Render** (via Cloudflare proxy for extension approval)
-
+- Deployed on **RAILWAY** 
 ### Stack
 Java · Spring Boot · Gemini API · Render · CORS setup
 
