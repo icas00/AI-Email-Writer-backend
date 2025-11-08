@@ -18,8 +18,8 @@ public class WebConfig {
                                 "https://ai-email-writer-4rk4.onrender.com", // deployed frontend
                                 "chrome-extension://nefgnkboedlacmpgbkgjoknjeigpppln",// extension
                                 "https://mail.google.com",
-                                "ai-email-writer-backend-production.up.railway.app"
-                        )
+                                "https://ai-email-writer-backend-production.up.railway.app"
+                                )
                         .allowedMethods("GET", "POST")
                         .allowedHeaders("*")
                         .allowCredentials(true);

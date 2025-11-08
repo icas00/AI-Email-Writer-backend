@@ -1,17 +1,16 @@
 package com.email.writer;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import jakarta.annotation.PostConstruct;
-import lombok.AllArgsConstructor;
+import java.util.List;
+import java.util.Map;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import java.util.List;
-import java.util.Map;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Service
 public class EmailGeneratorService {
@@ -34,7 +33,7 @@ public class EmailGeneratorService {
         try {
             String prompt = buildPrompt(emailRequest);
 
-            // Build request body in Gemini 2.5 Flash format
+            // Build request body in Gemini 1.5 Flash format
             Map<String, Object> requestBody = Map.of(
                     "contents", List.of(
                             Map.of(
@@ -93,26 +92,56 @@ public class EmailGeneratorService {
         StringBuilder prompt = new StringBuilder();
 
         prompt.append("""
-        You are an AI assistant that writes professional, human-like email replies.
+    You are writing an email reply as a real human professional, NOT as an AI assistant.
 
-        Task:
-        Generate a complete, well-structured email reply to the following email content.
+    CRITICAL: Write like a genuine person - natural, conversational, and authentic.
+    AVOID: Overly formal phrases, robotic patterns, AI-like politeness, or corporate jargon.
 
-        Guidelines:
-        - Maintain the context of the original email.
-        - Use the specified tone (if provided) for consistency.
-        - Be concise, polite, and natural.
-        - Include appropriate greetings, acknowledgements, and closings.
-        - If the sender asked a question or made a request, address it directly.
-        - If the tone is 'formal', use professional phrasing.
-        - If the tone is 'friendly', use approachable and conversational phrasing.
-        - Do not repeat the original email content.
-        """);
+    Task:
+    Generate a complete, human-sounding email reply to the following email.
+
+    Guidelines:
+    - Write as if YOU personally are replying, not an AI writing on someone's behalf.
+    - Use natural language people actually use in real emails.
+    - Be direct and genuine - avoid flowery or overly polite language.
+    - Include appropriate greetings and closings that feel authentic.
+    - If the sender asked a question, answer it naturally and clearly.
+    - Keep it conversational - imagine you're talking to a colleague or friend (depending on tone).
+    - Do NOT use phrases like "I hope this email finds you well" or "Thank you for reaching out".
+    - Avoid repetitive pleasantries or unnecessary formality.
+    - Write in active voice with simple, clear sentences.
+
+    Tone Guidelines:
+    - Friendly: Warm and casual, like chatting with a colleague you like. Use contractions (I'm, don't, etc).
+    - Professional: Respectful but not stiff. Clear and business-like without being robotic.
+    - Concise: Get straight to the point. No fluff, just the essential message.
+    - Apologetic: Genuinely sorry, empathetic, and taking responsibility. Sound human, not corporate.
+    - Grateful: Authentic appreciation without being over-the-top. Mean it.
+    - Brief: 1-3 sentences max. Quick, direct, natural.
+
+    HUMANIZATION RULES:
+    NEVER use: "I hope this message finds you well", "Thank you for reaching out", "Please do not hesitate"
+    NEVER sound like: Customer service bot, corporate template, or AI assistant
+    DO sound like: A real person typing a quick, genuine email
+    DO use: Contractions, simple words, natural flow, personality
+
+    """);
+
+        // Add tone specification
+        if (emailRequest.getTone() != null && !emailRequest.getTone().isEmpty()) {
+            prompt.append("Required Tone: ").append(emailRequest.getTone()).append("\n\n");
+        }
 
         // Add the original email content
         prompt.append("Original Email:\n")
                 .append(emailRequest.getEmailContent())
-                .append("\n\nNow write the best possible email reply in the given tone.");
+                .append("\n\n");
+
+        prompt.append("Now write your reply using the '")
+                .append(emailRequest.getTone() != null ? emailRequest.getTone() : "Friendly")
+                .append("' tone.\n\n");
+
+        prompt.append("REMEMBER: Write like a REAL HUMAN, not an AI. Be natural, authentic, and conversational. Avoid AI-sounding phrases at all costs.");
 
         return prompt.toString();
     }
