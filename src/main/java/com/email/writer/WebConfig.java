@@ -17,10 +17,11 @@ public class WebConfig {
                         .allowedOrigins(
                                 "https://ai-email-writer-4rk4.onrender.com", // deployed frontend
                                 "chrome-extension://nefgnkboedlacmpgbkgjoknjeigpppln",// extension
+                                                 // nefgnkboedlacmpgbkgjoknjeigpppln
                                 "https://mail.google.com",
                                 "https://ai-email-writer-backend-production.up.railway.app"
                                 )
-                        .allowedMethods("GET", "POST")
+                        .allowedMethods("GET", "POST", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);
             }
